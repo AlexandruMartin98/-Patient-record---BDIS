@@ -1,0 +1,10 @@
+c:\users\martin\documents\visual studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\ProjectBDIS.exe.config
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\ProjectBDIS.exe
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\ProjectBDIS.pdb
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\obj\Debug\ProjectBDIS.csprojResolveAssemblyReference.cache
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\obj\Debug\ProjectBDIS.Form1.resources
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\obj\Debug\ProjectBDIS.Properties.Resources.resources
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\obj\Debug\ProjectBDIS.csproj.GenerateResource.Cache
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\obj\Debug\ProjectBDIS.exe
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\obj\Debug\ProjectBDIS.pdb
+c:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\Oracle.DataAccess.dll
