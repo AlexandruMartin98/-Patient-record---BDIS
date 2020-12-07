@@ -87,10 +87,12 @@ namespace ProjectBDIS
                 String lastName = tbLastName.Text;
                 String address = tbAddress.Text;
                 //String date = dateTimePicker1.Value.ToString("MM/dd/yyyy");
-                DateTime date = dateTimePickerAdd.Value;
+                //DateTime date = dateTimePickerAdd.Value;
+                String date = dateTimePickerAdd.Value.ToString("MM/dd/yyyy");
+                var parsedDate = DateTime.Parse(date);
                 String age = tbAge.Text;
 
-                if (checkUserData(CNP, firstName, lastName, address, date, age))
+                if (checkUserData(CNP, firstName, lastName, address, parsedDate, age))
                 {
                     cmd = new OracleCommand("INSERT INTO PERSON (CNP, LASTNAME, FIRSTNAME, ADDRESS, BIRTHDATE, AGE)" + "VALUES (:pID, :pFirstName, :pSecondName, :pAddress, :pBirthDate, :pAge)", oracleConnection);
 
@@ -98,7 +100,7 @@ namespace ProjectBDIS
                     cmd.Parameters.Add("@firstname", firstName);
                     cmd.Parameters.Add("@lastname", lastName);
                     cmd.Parameters.Add("@address", address);
-                    cmd.Parameters.Add("@birthdate", date);
+                    cmd.Parameters.Add("@birthdate", parsedDate);
                     cmd.Parameters.Add("@age", age);
 
                     cmd.ExecuteNonQuery();
@@ -342,6 +344,7 @@ namespace ProjectBDIS
 
             tbConsultationCNP.Text = cnpConsultations.ToString();
             tbCNPModify.Text = cnpConsultations.ToString();
+            tbConsCnpAdd.Text = cnpConsultations.ToString();
 
             Random rnd = new Random();
             tbConsCidAdd.Text = rnd.Next(5, 100).ToString();
@@ -517,6 +520,7 @@ namespace ProjectBDIS
                             MessageBox.Show("Pacientul nu are consultatii, adauga una!");
                             //and go to add tab
                             this.tabControlConsultation.SelectedTab = this.tpCoAdd;
+                            clearTbCaseNoPacient();
                         }
 
                         oracleConnection.Close();
@@ -539,6 +543,23 @@ namespace ProjectBDIS
             tbMedication.Clear();
         }
 
+        private void clearTbCaseNoPacient()
+        {
+            tbConsCidModify.Clear();
+            tbConsCnpModify.Clear();
+            dateTimePickerDatecModify.Value = DateTimePicker.MinimumDateTime;
+            tbDiagnosticModify.Clear();
+            tbMedicationModify.Clear();
+            btnModifyConsultation.Enabled = false;
+
+            labelShowCidForDelete.Text = "cid disable";
+            labelShowCnpForDelete.Text = "cnp disalbe";
+            labelShowDatecForDelete.Text = "date disalbe";
+            labelShowDiagnosticForDelete.Text = "diagnostic disable";
+            labelShowMedicationForDelete.Text = "medication disable";
+            btnDeleteConsultation.Enabled = false;
+        }
+
         private void dgv2Level_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             BindTextFieldsConsultation(e.RowIndex);
@@ -555,7 +576,10 @@ namespace ProjectBDIS
             tbConsCidModify.DataBindings.Clear();
             tbConsCidModify.DataBindings.Add(new Binding("text", bsConsultation, "cid", true));
 
-            //bind cnp modify
+            //bind both tab cnp
+            tbConsultationCNP.DataBindings.Clear();
+            tbConsultationCNP.DataBindings.Add(new Binding("text", bsConsultation, "cnp", true));
+
             tbConsCnpModify.DataBindings.Clear();
             tbConsCnpModify.DataBindings.Add(new Binding("text", bsConsultation, "cnp", true));
 

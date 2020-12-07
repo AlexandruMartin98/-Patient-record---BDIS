@@ -48,7 +48,6 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.labelCNP = new System.Windows.Forms.Label();
             this.tabModify = new System.Windows.Forms.TabPage();
-            this.btnRejectModify = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.dateTimePickerModify = new System.Windows.Forms.DateTimePicker();
             this.tbAgeModify = new System.Windows.Forms.TextBox();
@@ -119,6 +118,12 @@
             this.tbConsCidModify = new System.Windows.Forms.TextBox();
             this.btnModifyConsultation = new System.Windows.Forms.Button();
             this.tpCoDelete = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelShowDiagnosticForDelete = new System.Windows.Forms.Label();
+            this.labelShowCidForDelete = new System.Windows.Forms.Label();
+            this.labelShowMedicationForDelete = new System.Windows.Forms.Label();
+            this.labelShowCnpForDelete = new System.Windows.Forms.Label();
+            this.labelShowDatecForDelete = new System.Windows.Forms.Label();
             this.labelConsSearchDelete = new System.Windows.Forms.Label();
             this.tbSearchDiagnosticDelete = new System.Windows.Forms.TextBox();
             this.btnDeleteConsultation = new System.Windows.Forms.Button();
@@ -134,12 +139,6 @@
             this.tabReports = new System.Windows.Forms.TabPage();
             this.pERSONTableAdapter = new ProjectBDIS.DataSetPersonTableAdapters.PERSONTableAdapter();
             this.cONSULTATIONTableAdapter = new ProjectBDIS.DataSetConsultationTableAdapters.CONSULTATIONTableAdapter();
-            this.labelShowCidForDelete = new System.Windows.Forms.Label();
-            this.labelShowCnpForDelete = new System.Windows.Forms.Label();
-            this.labelShowDatecForDelete = new System.Windows.Forms.Label();
-            this.labelShowMedicationForDelete = new System.Windows.Forms.Label();
-            this.labelShowDiagnosticForDelete = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPatient.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -158,10 +157,10 @@
             this.tpCoModify.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tpCoDelete.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cONSULTATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConsultation)).BeginInit();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -201,7 +200,6 @@
             // 
             // tabAddDelete
             // 
-            this.tabAddDelete.Controls.Add(this.btnDelete);
             this.tabAddDelete.Controls.Add(this.btnAdd);
             this.tabAddDelete.Controls.Add(this.dateTimePickerAdd);
             this.tabAddDelete.Controls.Add(this.tbAge);
@@ -220,12 +218,12 @@
             this.tabAddDelete.Padding = new System.Windows.Forms.Padding(3);
             this.tabAddDelete.Size = new System.Drawing.Size(442, 393);
             this.tabAddDelete.TabIndex = 0;
-            this.tabAddDelete.Text = "Adaugare/Stergere";
+            this.tabAddDelete.Text = "Adaugare";
             this.tabAddDelete.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(188, 352);
+            this.btnDelete.Location = new System.Drawing.Point(190, 352);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(129, 35);
             this.btnDelete.TabIndex = 14;
@@ -235,7 +233,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(188, 301);
+            this.btnAdd.Location = new System.Drawing.Point(188, 324);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(129, 36);
             this.btnAdd.TabIndex = 13;
@@ -345,7 +343,7 @@
             // 
             // tabModify
             // 
-            this.tabModify.Controls.Add(this.btnRejectModify);
+            this.tabModify.Controls.Add(this.btnDelete);
             this.tabModify.Controls.Add(this.btnModify);
             this.tabModify.Controls.Add(this.dateTimePickerModify);
             this.tabModify.Controls.Add(this.tbAgeModify);
@@ -364,17 +362,8 @@
             this.tabModify.Padding = new System.Windows.Forms.Padding(3);
             this.tabModify.Size = new System.Drawing.Size(442, 393);
             this.tabModify.TabIndex = 1;
-            this.tabModify.Text = "Modificare";
+            this.tabModify.Text = "Modificare/Stergere";
             this.tabModify.UseVisualStyleBackColor = true;
-            // 
-            // btnRejectModify
-            // 
-            this.btnRejectModify.Location = new System.Drawing.Point(190, 349);
-            this.btnRejectModify.Name = "btnRejectModify";
-            this.btnRejectModify.Size = new System.Drawing.Size(129, 35);
-            this.btnRejectModify.TabIndex = 27;
-            this.btnRejectModify.Text = "Sterge Modificare";
-            this.btnRejectModify.UseVisualStyleBackColor = true;
             // 
             // btnModify
             // 
@@ -1009,6 +998,64 @@
             this.tpCoDelete.Text = "Stergere";
             this.tpCoDelete.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.labelShowDiagnosticForDelete);
+            this.groupBox4.Controls.Add(this.labelShowCidForDelete);
+            this.groupBox4.Controls.Add(this.labelShowMedicationForDelete);
+            this.groupBox4.Controls.Add(this.labelShowCnpForDelete);
+            this.groupBox4.Controls.Add(this.labelShowDatecForDelete);
+            this.groupBox4.Location = new System.Drawing.Point(66, 106);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(364, 166);
+            this.groupBox4.TabIndex = 19;
+            this.groupBox4.TabStop = false;
+            // 
+            // labelShowDiagnosticForDelete
+            // 
+            this.labelShowDiagnosticForDelete.AutoSize = true;
+            this.labelShowDiagnosticForDelete.Location = new System.Drawing.Point(6, 107);
+            this.labelShowDiagnosticForDelete.Name = "labelShowDiagnosticForDelete";
+            this.labelShowDiagnosticForDelete.Size = new System.Drawing.Size(104, 17);
+            this.labelShowDiagnosticForDelete.TabIndex = 18;
+            this.labelShowDiagnosticForDelete.Text = "labelDiagnostic";
+            // 
+            // labelShowCidForDelete
+            // 
+            this.labelShowCidForDelete.AutoSize = true;
+            this.labelShowCidForDelete.Location = new System.Drawing.Point(6, 17);
+            this.labelShowCidForDelete.Name = "labelShowCidForDelete";
+            this.labelShowCidForDelete.Size = new System.Drawing.Size(58, 17);
+            this.labelShowCidForDelete.TabIndex = 14;
+            this.labelShowCidForDelete.Text = "labelCid";
+            // 
+            // labelShowMedicationForDelete
+            // 
+            this.labelShowMedicationForDelete.AutoSize = true;
+            this.labelShowMedicationForDelete.Location = new System.Drawing.Point(6, 137);
+            this.labelShowMedicationForDelete.Name = "labelShowMedicationForDelete";
+            this.labelShowMedicationForDelete.Size = new System.Drawing.Size(106, 17);
+            this.labelShowMedicationForDelete.TabIndex = 17;
+            this.labelShowMedicationForDelete.Text = "labelMedication";
+            // 
+            // labelShowCnpForDelete
+            // 
+            this.labelShowCnpForDelete.AutoSize = true;
+            this.labelShowCnpForDelete.Location = new System.Drawing.Point(6, 47);
+            this.labelShowCnpForDelete.Name = "labelShowCnpForDelete";
+            this.labelShowCnpForDelete.Size = new System.Drawing.Size(63, 17);
+            this.labelShowCnpForDelete.TabIndex = 15;
+            this.labelShowCnpForDelete.Text = "labelCnp";
+            // 
+            // labelShowDatecForDelete
+            // 
+            this.labelShowDatecForDelete.AutoSize = true;
+            this.labelShowDatecForDelete.Location = new System.Drawing.Point(6, 77);
+            this.labelShowDatecForDelete.Name = "labelShowDatecForDelete";
+            this.labelShowDatecForDelete.Size = new System.Drawing.Size(75, 17);
+            this.labelShowDatecForDelete.TabIndex = 16;
+            this.labelShowDatecForDelete.Text = "labelDatec";
+            // 
             // labelConsSearchDelete
             // 
             this.labelConsSearchDelete.AutoSize = true;
@@ -1122,64 +1169,6 @@
             // 
             this.cONSULTATIONTableAdapter.ClearBeforeFill = true;
             // 
-            // labelShowCidForDelete
-            // 
-            this.labelShowCidForDelete.AutoSize = true;
-            this.labelShowCidForDelete.Location = new System.Drawing.Point(6, 17);
-            this.labelShowCidForDelete.Name = "labelShowCidForDelete";
-            this.labelShowCidForDelete.Size = new System.Drawing.Size(58, 17);
-            this.labelShowCidForDelete.TabIndex = 14;
-            this.labelShowCidForDelete.Text = "labelCid";
-            // 
-            // labelShowCnpForDelete
-            // 
-            this.labelShowCnpForDelete.AutoSize = true;
-            this.labelShowCnpForDelete.Location = new System.Drawing.Point(6, 47);
-            this.labelShowCnpForDelete.Name = "labelShowCnpForDelete";
-            this.labelShowCnpForDelete.Size = new System.Drawing.Size(63, 17);
-            this.labelShowCnpForDelete.TabIndex = 15;
-            this.labelShowCnpForDelete.Text = "labelCnp";
-            // 
-            // labelShowDatecForDelete
-            // 
-            this.labelShowDatecForDelete.AutoSize = true;
-            this.labelShowDatecForDelete.Location = new System.Drawing.Point(6, 77);
-            this.labelShowDatecForDelete.Name = "labelShowDatecForDelete";
-            this.labelShowDatecForDelete.Size = new System.Drawing.Size(75, 17);
-            this.labelShowDatecForDelete.TabIndex = 16;
-            this.labelShowDatecForDelete.Text = "labelDatec";
-            // 
-            // labelShowMedicationForDelete
-            // 
-            this.labelShowMedicationForDelete.AutoSize = true;
-            this.labelShowMedicationForDelete.Location = new System.Drawing.Point(6, 137);
-            this.labelShowMedicationForDelete.Name = "labelShowMedicationForDelete";
-            this.labelShowMedicationForDelete.Size = new System.Drawing.Size(106, 17);
-            this.labelShowMedicationForDelete.TabIndex = 17;
-            this.labelShowMedicationForDelete.Text = "labelMedication";
-            // 
-            // labelShowDiagnosticForDelete
-            // 
-            this.labelShowDiagnosticForDelete.AutoSize = true;
-            this.labelShowDiagnosticForDelete.Location = new System.Drawing.Point(6, 107);
-            this.labelShowDiagnosticForDelete.Name = "labelShowDiagnosticForDelete";
-            this.labelShowDiagnosticForDelete.Size = new System.Drawing.Size(104, 17);
-            this.labelShowDiagnosticForDelete.TabIndex = 18;
-            this.labelShowDiagnosticForDelete.Text = "labelDiagnostic";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.labelShowDiagnosticForDelete);
-            this.groupBox4.Controls.Add(this.labelShowCidForDelete);
-            this.groupBox4.Controls.Add(this.labelShowMedicationForDelete);
-            this.groupBox4.Controls.Add(this.labelShowCnpForDelete);
-            this.groupBox4.Controls.Add(this.labelShowDatecForDelete);
-            this.groupBox4.Location = new System.Drawing.Point(66, 106);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(364, 166);
-            this.groupBox4.TabIndex = 19;
-            this.groupBox4.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1215,11 +1204,11 @@
             this.groupBox3.PerformLayout();
             this.tpCoDelete.ResumeLayout(false);
             this.tpCoDelete.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cONSULTATIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConsultation)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1269,7 +1258,6 @@
         private System.Windows.Forms.Label labelLastNameModify;
         private System.Windows.Forms.Label labelFirstNameModify;
         private System.Windows.Forms.Label labelCNPModify;
-        private System.Windows.Forms.Button btnRejectModify;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.TabPage tabFind;
         private System.Windows.Forms.Label labelFind1;
