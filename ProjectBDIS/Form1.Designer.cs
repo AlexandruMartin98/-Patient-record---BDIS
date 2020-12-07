@@ -79,8 +79,67 @@
             this.pERSONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetPerson = new ProjectBDIS.DataSetPerson();
             this.tabConsultations = new System.Windows.Forms.TabPage();
+            this.tabControlConsultation = new System.Windows.Forms.TabControl();
+            this.tpCoView = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerConsultation = new System.Windows.Forms.DateTimePicker();
+            this.labelMedication = new System.Windows.Forms.Label();
+            this.labelDiagnostic = new System.Windows.Forms.Label();
+            this.labelDateConsultation = new System.Windows.Forms.Label();
+            this.labelConsultationCNP = new System.Windows.Forms.Label();
+            this.labelCID = new System.Windows.Forms.Label();
+            this.tbMedication = new System.Windows.Forms.TextBox();
+            this.tbDiagnostic = new System.Windows.Forms.TextBox();
+            this.tbConsultationCNP = new System.Windows.Forms.TextBox();
+            this.tbCID = new System.Windows.Forms.TextBox();
+            this.tpCoAdd = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerDatecAdd = new System.Windows.Forms.DateTimePicker();
+            this.labelConsMedicationAdd = new System.Windows.Forms.Label();
+            this.labelConsDiagnosticAdd = new System.Windows.Forms.Label();
+            this.labelConsDatecAdd = new System.Windows.Forms.Label();
+            this.labelConsCnpAdd = new System.Windows.Forms.Label();
+            this.labelConsCidAdd = new System.Windows.Forms.Label();
+            this.tbMedicationAdd = new System.Windows.Forms.TextBox();
+            this.tbDiagnosticAdd = new System.Windows.Forms.TextBox();
+            this.tbConsCnpAdd = new System.Windows.Forms.TextBox();
+            this.tbConsCidAdd = new System.Windows.Forms.TextBox();
+            this.btnAddConsultation = new System.Windows.Forms.Button();
+            this.tpCoModify = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerDatecModify = new System.Windows.Forms.DateTimePicker();
+            this.labelConsMedicationModify = new System.Windows.Forms.Label();
+            this.labelConsDiagnosticModify = new System.Windows.Forms.Label();
+            this.labelConsDatecModify = new System.Windows.Forms.Label();
+            this.labelConsCnpModify = new System.Windows.Forms.Label();
+            this.labelConsCidModify = new System.Windows.Forms.Label();
+            this.tbMedicationModify = new System.Windows.Forms.TextBox();
+            this.tbDiagnosticModify = new System.Windows.Forms.TextBox();
+            this.tbConsCnpModify = new System.Windows.Forms.TextBox();
+            this.tbConsCidModify = new System.Windows.Forms.TextBox();
+            this.btnModifyConsultation = new System.Windows.Forms.Button();
+            this.tpCoDelete = new System.Windows.Forms.TabPage();
+            this.labelConsSearchDelete = new System.Windows.Forms.Label();
+            this.tbSearchDiagnosticDelete = new System.Windows.Forms.TextBox();
+            this.btnDeleteConsultation = new System.Windows.Forms.Button();
+            this.labelConsultationErrorPrevent = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATECDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dIAGNOSTICDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mEDICATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cONSULTATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetConsultation = new ProjectBDIS.DataSetConsultation();
             this.tabReports = new System.Windows.Forms.TabPage();
             this.pERSONTableAdapter = new ProjectBDIS.DataSetPersonTableAdapters.PERSONTableAdapter();
+            this.cONSULTATIONTableAdapter = new ProjectBDIS.DataSetConsultationTableAdapters.CONSULTATIONTableAdapter();
+            this.labelShowCidForDelete = new System.Windows.Forms.Label();
+            this.labelShowCnpForDelete = new System.Windows.Forms.Label();
+            this.labelShowDatecForDelete = new System.Windows.Forms.Label();
+            this.labelShowMedicationForDelete = new System.Windows.Forms.Label();
+            this.labelShowDiagnosticForDelete = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPatient.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -90,6 +149,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPerson)).BeginInit();
+            this.tabConsultations.SuspendLayout();
+            this.tabControlConsultation.SuspendLayout();
+            this.tpCoView.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tpCoAdd.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tpCoModify.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tpCoDelete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cONSULTATIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetConsultation)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,6 +174,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(997, 498);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPatient
             // 
@@ -546,6 +619,9 @@
             // 
             // tabConsultations
             // 
+            this.tabConsultations.Controls.Add(this.tabControlConsultation);
+            this.tabConsultations.Controls.Add(this.labelConsultationErrorPrevent);
+            this.tabConsultations.Controls.Add(this.dataGridView2);
             this.tabConsultations.Location = new System.Drawing.Point(4, 25);
             this.tabConsultations.Name = "tabConsultations";
             this.tabConsultations.Padding = new System.Windows.Forms.Padding(3);
@@ -553,6 +629,480 @@
             this.tabConsultations.TabIndex = 1;
             this.tabConsultations.Text = "Consultatii";
             this.tabConsultations.UseVisualStyleBackColor = true;
+            // 
+            // tabControlConsultation
+            // 
+            this.tabControlConsultation.Controls.Add(this.tpCoView);
+            this.tabControlConsultation.Controls.Add(this.tpCoAdd);
+            this.tabControlConsultation.Controls.Add(this.tpCoModify);
+            this.tabControlConsultation.Controls.Add(this.tpCoDelete);
+            this.tabControlConsultation.Location = new System.Drawing.Point(483, 56);
+            this.tabControlConsultation.Name = "tabControlConsultation";
+            this.tabControlConsultation.SelectedIndex = 0;
+            this.tabControlConsultation.Size = new System.Drawing.Size(500, 360);
+            this.tabControlConsultation.TabIndex = 17;
+            // 
+            // tpCoView
+            // 
+            this.tpCoView.Controls.Add(this.groupBox1);
+            this.tpCoView.Location = new System.Drawing.Point(4, 25);
+            this.tpCoView.Name = "tpCoView";
+            this.tpCoView.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCoView.Size = new System.Drawing.Size(492, 331);
+            this.tpCoView.TabIndex = 0;
+            this.tpCoView.Text = "Vizualizare";
+            this.tpCoView.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dateTimePickerConsultation);
+            this.groupBox1.Controls.Add(this.labelMedication);
+            this.groupBox1.Controls.Add(this.labelDiagnostic);
+            this.groupBox1.Controls.Add(this.labelDateConsultation);
+            this.groupBox1.Controls.Add(this.labelConsultationCNP);
+            this.groupBox1.Controls.Add(this.labelCID);
+            this.groupBox1.Controls.Add(this.tbMedication);
+            this.groupBox1.Controls.Add(this.tbDiagnostic);
+            this.groupBox1.Controls.Add(this.tbConsultationCNP);
+            this.groupBox1.Controls.Add(this.tbCID);
+            this.groupBox1.Location = new System.Drawing.Point(22, 17);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(450, 257);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            // 
+            // dateTimePickerConsultation
+            // 
+            this.dateTimePickerConsultation.Location = new System.Drawing.Point(175, 115);
+            this.dateTimePickerConsultation.Name = "dateTimePickerConsultation";
+            this.dateTimePickerConsultation.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerConsultation.TabIndex = 14;
+            // 
+            // labelMedication
+            // 
+            this.labelMedication.AutoSize = true;
+            this.labelMedication.Location = new System.Drawing.Point(25, 221);
+            this.labelMedication.Name = "labelMedication";
+            this.labelMedication.Size = new System.Drawing.Size(107, 17);
+            this.labelMedication.TabIndex = 10;
+            this.labelMedication.Text = "Medicamentatie";
+            // 
+            // labelDiagnostic
+            // 
+            this.labelDiagnostic.AutoSize = true;
+            this.labelDiagnostic.Location = new System.Drawing.Point(58, 171);
+            this.labelDiagnostic.Name = "labelDiagnostic";
+            this.labelDiagnostic.Size = new System.Drawing.Size(74, 17);
+            this.labelDiagnostic.TabIndex = 9;
+            this.labelDiagnostic.Text = "Diagnostic";
+            // 
+            // labelDateConsultation
+            // 
+            this.labelDateConsultation.AutoSize = true;
+            this.labelDateConsultation.Location = new System.Drawing.Point(22, 121);
+            this.labelDateConsultation.Name = "labelDateConsultation";
+            this.labelDateConsultation.Size = new System.Drawing.Size(110, 17);
+            this.labelDateConsultation.TabIndex = 8;
+            this.labelDateConsultation.Text = "Data consultatie";
+            // 
+            // labelConsultationCNP
+            // 
+            this.labelConsultationCNP.AutoSize = true;
+            this.labelConsultationCNP.Location = new System.Drawing.Point(45, 68);
+            this.labelConsultationCNP.Name = "labelConsultationCNP";
+            this.labelConsultationCNP.Size = new System.Drawing.Size(87, 17);
+            this.labelConsultationCNP.TabIndex = 7;
+            this.labelConsultationCNP.Text = "CNP Pacient";
+            // 
+            // labelCID
+            // 
+            this.labelCID.AutoSize = true;
+            this.labelCID.Location = new System.Drawing.Point(29, 13);
+            this.labelCID.Name = "labelCID";
+            this.labelCID.Size = new System.Drawing.Size(103, 17);
+            this.labelCID.TabIndex = 6;
+            this.labelCID.Text = "Consultation ID";
+            // 
+            // tbMedication
+            // 
+            this.tbMedication.Location = new System.Drawing.Point(175, 218);
+            this.tbMedication.Name = "tbMedication";
+            this.tbMedication.Size = new System.Drawing.Size(201, 22);
+            this.tbMedication.TabIndex = 5;
+            // 
+            // tbDiagnostic
+            // 
+            this.tbDiagnostic.Location = new System.Drawing.Point(175, 168);
+            this.tbDiagnostic.Name = "tbDiagnostic";
+            this.tbDiagnostic.Size = new System.Drawing.Size(201, 22);
+            this.tbDiagnostic.TabIndex = 4;
+            // 
+            // tbConsultationCNP
+            // 
+            this.tbConsultationCNP.Location = new System.Drawing.Point(175, 65);
+            this.tbConsultationCNP.Name = "tbConsultationCNP";
+            this.tbConsultationCNP.ReadOnly = true;
+            this.tbConsultationCNP.Size = new System.Drawing.Size(201, 22);
+            this.tbConsultationCNP.TabIndex = 2;
+            // 
+            // tbCID
+            // 
+            this.tbCID.Location = new System.Drawing.Point(175, 10);
+            this.tbCID.Name = "tbCID";
+            this.tbCID.ReadOnly = true;
+            this.tbCID.Size = new System.Drawing.Size(201, 22);
+            this.tbCID.TabIndex = 1;
+            // 
+            // tpCoAdd
+            // 
+            this.tpCoAdd.Controls.Add(this.groupBox2);
+            this.tpCoAdd.Controls.Add(this.btnAddConsultation);
+            this.tpCoAdd.Location = new System.Drawing.Point(4, 25);
+            this.tpCoAdd.Name = "tpCoAdd";
+            this.tpCoAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCoAdd.Size = new System.Drawing.Size(492, 331);
+            this.tpCoAdd.TabIndex = 1;
+            this.tpCoAdd.Text = "Adaugare";
+            this.tpCoAdd.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dateTimePickerDatecAdd);
+            this.groupBox2.Controls.Add(this.labelConsMedicationAdd);
+            this.groupBox2.Controls.Add(this.labelConsDiagnosticAdd);
+            this.groupBox2.Controls.Add(this.labelConsDatecAdd);
+            this.groupBox2.Controls.Add(this.labelConsCnpAdd);
+            this.groupBox2.Controls.Add(this.labelConsCidAdd);
+            this.groupBox2.Controls.Add(this.tbMedicationAdd);
+            this.groupBox2.Controls.Add(this.tbDiagnosticAdd);
+            this.groupBox2.Controls.Add(this.tbConsCnpAdd);
+            this.groupBox2.Controls.Add(this.tbConsCidAdd);
+            this.groupBox2.Location = new System.Drawing.Point(22, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(450, 257);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            // 
+            // dateTimePickerDatecAdd
+            // 
+            this.dateTimePickerDatecAdd.Location = new System.Drawing.Point(175, 115);
+            this.dateTimePickerDatecAdd.Name = "dateTimePickerDatecAdd";
+            this.dateTimePickerDatecAdd.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerDatecAdd.TabIndex = 14;
+            // 
+            // labelConsMedicationAdd
+            // 
+            this.labelConsMedicationAdd.AutoSize = true;
+            this.labelConsMedicationAdd.Location = new System.Drawing.Point(25, 221);
+            this.labelConsMedicationAdd.Name = "labelConsMedicationAdd";
+            this.labelConsMedicationAdd.Size = new System.Drawing.Size(107, 17);
+            this.labelConsMedicationAdd.TabIndex = 10;
+            this.labelConsMedicationAdd.Text = "Medicamentatie";
+            // 
+            // labelConsDiagnosticAdd
+            // 
+            this.labelConsDiagnosticAdd.AutoSize = true;
+            this.labelConsDiagnosticAdd.Location = new System.Drawing.Point(58, 171);
+            this.labelConsDiagnosticAdd.Name = "labelConsDiagnosticAdd";
+            this.labelConsDiagnosticAdd.Size = new System.Drawing.Size(74, 17);
+            this.labelConsDiagnosticAdd.TabIndex = 9;
+            this.labelConsDiagnosticAdd.Text = "Diagnostic";
+            // 
+            // labelConsDatecAdd
+            // 
+            this.labelConsDatecAdd.AutoSize = true;
+            this.labelConsDatecAdd.Location = new System.Drawing.Point(22, 121);
+            this.labelConsDatecAdd.Name = "labelConsDatecAdd";
+            this.labelConsDatecAdd.Size = new System.Drawing.Size(110, 17);
+            this.labelConsDatecAdd.TabIndex = 8;
+            this.labelConsDatecAdd.Text = "Data consultatie";
+            // 
+            // labelConsCnpAdd
+            // 
+            this.labelConsCnpAdd.AutoSize = true;
+            this.labelConsCnpAdd.Location = new System.Drawing.Point(45, 68);
+            this.labelConsCnpAdd.Name = "labelConsCnpAdd";
+            this.labelConsCnpAdd.Size = new System.Drawing.Size(87, 17);
+            this.labelConsCnpAdd.TabIndex = 7;
+            this.labelConsCnpAdd.Text = "CNP Pacient";
+            // 
+            // labelConsCidAdd
+            // 
+            this.labelConsCidAdd.AutoSize = true;
+            this.labelConsCidAdd.Location = new System.Drawing.Point(29, 13);
+            this.labelConsCidAdd.Name = "labelConsCidAdd";
+            this.labelConsCidAdd.Size = new System.Drawing.Size(103, 17);
+            this.labelConsCidAdd.TabIndex = 6;
+            this.labelConsCidAdd.Text = "Consultation ID";
+            // 
+            // tbMedicationAdd
+            // 
+            this.tbMedicationAdd.Location = new System.Drawing.Point(175, 218);
+            this.tbMedicationAdd.Name = "tbMedicationAdd";
+            this.tbMedicationAdd.Size = new System.Drawing.Size(201, 22);
+            this.tbMedicationAdd.TabIndex = 5;
+            // 
+            // tbDiagnosticAdd
+            // 
+            this.tbDiagnosticAdd.Location = new System.Drawing.Point(175, 168);
+            this.tbDiagnosticAdd.Name = "tbDiagnosticAdd";
+            this.tbDiagnosticAdd.Size = new System.Drawing.Size(201, 22);
+            this.tbDiagnosticAdd.TabIndex = 4;
+            // 
+            // tbConsCnpAdd
+            // 
+            this.tbConsCnpAdd.Location = new System.Drawing.Point(175, 65);
+            this.tbConsCnpAdd.Name = "tbConsCnpAdd";
+            this.tbConsCnpAdd.ReadOnly = true;
+            this.tbConsCnpAdd.Size = new System.Drawing.Size(201, 22);
+            this.tbConsCnpAdd.TabIndex = 2;
+            // 
+            // tbConsCidAdd
+            // 
+            this.tbConsCidAdd.Location = new System.Drawing.Point(175, 10);
+            this.tbConsCidAdd.Name = "tbConsCidAdd";
+            this.tbConsCidAdd.ReadOnly = true;
+            this.tbConsCidAdd.Size = new System.Drawing.Size(201, 22);
+            this.tbConsCidAdd.TabIndex = 1;
+            // 
+            // btnAddConsultation
+            // 
+            this.btnAddConsultation.Location = new System.Drawing.Point(221, 296);
+            this.btnAddConsultation.Name = "btnAddConsultation";
+            this.btnAddConsultation.Size = new System.Drawing.Size(80, 29);
+            this.btnAddConsultation.TabIndex = 11;
+            this.btnAddConsultation.Text = "Adauga";
+            this.btnAddConsultation.UseVisualStyleBackColor = true;
+            this.btnAddConsultation.Click += new System.EventHandler(this.btnAddConsultation_Click);
+            // 
+            // tpCoModify
+            // 
+            this.tpCoModify.Controls.Add(this.groupBox3);
+            this.tpCoModify.Controls.Add(this.btnModifyConsultation);
+            this.tpCoModify.Location = new System.Drawing.Point(4, 25);
+            this.tpCoModify.Name = "tpCoModify";
+            this.tpCoModify.Size = new System.Drawing.Size(492, 331);
+            this.tpCoModify.TabIndex = 2;
+            this.tpCoModify.Text = "Modificare";
+            this.tpCoModify.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dateTimePickerDatecModify);
+            this.groupBox3.Controls.Add(this.labelConsMedicationModify);
+            this.groupBox3.Controls.Add(this.labelConsDiagnosticModify);
+            this.groupBox3.Controls.Add(this.labelConsDatecModify);
+            this.groupBox3.Controls.Add(this.labelConsCnpModify);
+            this.groupBox3.Controls.Add(this.labelConsCidModify);
+            this.groupBox3.Controls.Add(this.tbMedicationModify);
+            this.groupBox3.Controls.Add(this.tbDiagnosticModify);
+            this.groupBox3.Controls.Add(this.tbConsCnpModify);
+            this.groupBox3.Controls.Add(this.tbConsCidModify);
+            this.groupBox3.Location = new System.Drawing.Point(22, 17);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(450, 257);
+            this.groupBox3.TabIndex = 18;
+            this.groupBox3.TabStop = false;
+            // 
+            // dateTimePickerDatecModify
+            // 
+            this.dateTimePickerDatecModify.Location = new System.Drawing.Point(175, 115);
+            this.dateTimePickerDatecModify.Name = "dateTimePickerDatecModify";
+            this.dateTimePickerDatecModify.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerDatecModify.TabIndex = 14;
+            // 
+            // labelConsMedicationModify
+            // 
+            this.labelConsMedicationModify.AutoSize = true;
+            this.labelConsMedicationModify.Location = new System.Drawing.Point(25, 221);
+            this.labelConsMedicationModify.Name = "labelConsMedicationModify";
+            this.labelConsMedicationModify.Size = new System.Drawing.Size(107, 17);
+            this.labelConsMedicationModify.TabIndex = 10;
+            this.labelConsMedicationModify.Text = "Medicamentatie";
+            // 
+            // labelConsDiagnosticModify
+            // 
+            this.labelConsDiagnosticModify.AutoSize = true;
+            this.labelConsDiagnosticModify.Location = new System.Drawing.Point(58, 171);
+            this.labelConsDiagnosticModify.Name = "labelConsDiagnosticModify";
+            this.labelConsDiagnosticModify.Size = new System.Drawing.Size(74, 17);
+            this.labelConsDiagnosticModify.TabIndex = 9;
+            this.labelConsDiagnosticModify.Text = "Diagnostic";
+            // 
+            // labelConsDatecModify
+            // 
+            this.labelConsDatecModify.AutoSize = true;
+            this.labelConsDatecModify.Location = new System.Drawing.Point(22, 121);
+            this.labelConsDatecModify.Name = "labelConsDatecModify";
+            this.labelConsDatecModify.Size = new System.Drawing.Size(110, 17);
+            this.labelConsDatecModify.TabIndex = 8;
+            this.labelConsDatecModify.Text = "Data consultatie";
+            // 
+            // labelConsCnpModify
+            // 
+            this.labelConsCnpModify.AutoSize = true;
+            this.labelConsCnpModify.Location = new System.Drawing.Point(45, 68);
+            this.labelConsCnpModify.Name = "labelConsCnpModify";
+            this.labelConsCnpModify.Size = new System.Drawing.Size(87, 17);
+            this.labelConsCnpModify.TabIndex = 7;
+            this.labelConsCnpModify.Text = "CNP Pacient";
+            // 
+            // labelConsCidModify
+            // 
+            this.labelConsCidModify.AutoSize = true;
+            this.labelConsCidModify.Location = new System.Drawing.Point(29, 13);
+            this.labelConsCidModify.Name = "labelConsCidModify";
+            this.labelConsCidModify.Size = new System.Drawing.Size(103, 17);
+            this.labelConsCidModify.TabIndex = 6;
+            this.labelConsCidModify.Text = "Consultation ID";
+            // 
+            // tbMedicationModify
+            // 
+            this.tbMedicationModify.Location = new System.Drawing.Point(175, 218);
+            this.tbMedicationModify.Name = "tbMedicationModify";
+            this.tbMedicationModify.Size = new System.Drawing.Size(201, 22);
+            this.tbMedicationModify.TabIndex = 5;
+            // 
+            // tbDiagnosticModify
+            // 
+            this.tbDiagnosticModify.Location = new System.Drawing.Point(175, 168);
+            this.tbDiagnosticModify.Name = "tbDiagnosticModify";
+            this.tbDiagnosticModify.Size = new System.Drawing.Size(201, 22);
+            this.tbDiagnosticModify.TabIndex = 4;
+            // 
+            // tbConsCnpModify
+            // 
+            this.tbConsCnpModify.Location = new System.Drawing.Point(175, 65);
+            this.tbConsCnpModify.Name = "tbConsCnpModify";
+            this.tbConsCnpModify.ReadOnly = true;
+            this.tbConsCnpModify.Size = new System.Drawing.Size(201, 22);
+            this.tbConsCnpModify.TabIndex = 2;
+            // 
+            // tbConsCidModify
+            // 
+            this.tbConsCidModify.Location = new System.Drawing.Point(175, 10);
+            this.tbConsCidModify.Name = "tbConsCidModify";
+            this.tbConsCidModify.ReadOnly = true;
+            this.tbConsCidModify.Size = new System.Drawing.Size(201, 22);
+            this.tbConsCidModify.TabIndex = 1;
+            // 
+            // btnModifyConsultation
+            // 
+            this.btnModifyConsultation.Location = new System.Drawing.Point(221, 296);
+            this.btnModifyConsultation.Name = "btnModifyConsultation";
+            this.btnModifyConsultation.Size = new System.Drawing.Size(80, 29);
+            this.btnModifyConsultation.TabIndex = 12;
+            this.btnModifyConsultation.Text = "Modifica";
+            this.btnModifyConsultation.UseVisualStyleBackColor = true;
+            this.btnModifyConsultation.Click += new System.EventHandler(this.btnModifyConsultation_Click);
+            // 
+            // tpCoDelete
+            // 
+            this.tpCoDelete.Controls.Add(this.groupBox4);
+            this.tpCoDelete.Controls.Add(this.labelConsSearchDelete);
+            this.tpCoDelete.Controls.Add(this.tbSearchDiagnosticDelete);
+            this.tpCoDelete.Controls.Add(this.btnDeleteConsultation);
+            this.tpCoDelete.Location = new System.Drawing.Point(4, 25);
+            this.tpCoDelete.Name = "tpCoDelete";
+            this.tpCoDelete.Size = new System.Drawing.Size(492, 331);
+            this.tpCoDelete.TabIndex = 3;
+            this.tpCoDelete.Text = "Stergere";
+            this.tpCoDelete.UseVisualStyleBackColor = true;
+            // 
+            // labelConsSearchDelete
+            // 
+            this.labelConsSearchDelete.AutoSize = true;
+            this.labelConsSearchDelete.Location = new System.Drawing.Point(66, 60);
+            this.labelConsSearchDelete.Name = "labelConsSearchDelete";
+            this.labelConsSearchDelete.Size = new System.Drawing.Size(149, 17);
+            this.labelConsSearchDelete.TabIndex = 1;
+            this.labelConsSearchDelete.Text = "Cauta dupa diagnostic";
+            // 
+            // tbSearchDiagnosticDelete
+            // 
+            this.tbSearchDiagnosticDelete.Location = new System.Drawing.Point(233, 57);
+            this.tbSearchDiagnosticDelete.Name = "tbSearchDiagnosticDelete";
+            this.tbSearchDiagnosticDelete.Size = new System.Drawing.Size(197, 22);
+            this.tbSearchDiagnosticDelete.TabIndex = 0;
+            this.tbSearchDiagnosticDelete.TextChanged += new System.EventHandler(this.tbFindByDiagnostic_TextChanged);
+            // 
+            // btnDeleteConsultation
+            // 
+            this.btnDeleteConsultation.Location = new System.Drawing.Point(221, 296);
+            this.btnDeleteConsultation.Name = "btnDeleteConsultation";
+            this.btnDeleteConsultation.Size = new System.Drawing.Size(80, 29);
+            this.btnDeleteConsultation.TabIndex = 13;
+            this.btnDeleteConsultation.Text = "Sterge";
+            this.btnDeleteConsultation.UseVisualStyleBackColor = true;
+            this.btnDeleteConsultation.Click += new System.EventHandler(this.btnDeleteConsultation_Click);
+            // 
+            // labelConsultationErrorPrevent
+            // 
+            this.labelConsultationErrorPrevent.AutoSize = true;
+            this.labelConsultationErrorPrevent.Location = new System.Drawing.Point(628, 26);
+            this.labelConsultationErrorPrevent.Name = "labelConsultationErrorPrevent";
+            this.labelConsultationErrorPrevent.Size = new System.Drawing.Size(209, 17);
+            this.labelConsultationErrorPrevent.TabIndex = 15;
+            this.labelConsultationErrorPrevent.Text = "Trebuie sa selectezi un pacient.";
+            this.labelConsultationErrorPrevent.Visible = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cIDDataGridViewTextBoxColumn,
+            this.cNPDataGridViewTextBoxColumn1,
+            this.dATECDataGridViewTextBoxColumn,
+            this.dIAGNOSTICDataGridViewTextBoxColumn,
+            this.mEDICATIONDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.cONSULTATIONBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(16, 51);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(402, 365);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2Level_CellClick);
+            // 
+            // cIDDataGridViewTextBoxColumn
+            // 
+            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "CID";
+            this.cIDDataGridViewTextBoxColumn.HeaderText = "CID";
+            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
+            // 
+            // cNPDataGridViewTextBoxColumn1
+            // 
+            this.cNPDataGridViewTextBoxColumn1.DataPropertyName = "CNP";
+            this.cNPDataGridViewTextBoxColumn1.HeaderText = "CNP";
+            this.cNPDataGridViewTextBoxColumn1.Name = "cNPDataGridViewTextBoxColumn1";
+            // 
+            // dATECDataGridViewTextBoxColumn
+            // 
+            this.dATECDataGridViewTextBoxColumn.DataPropertyName = "DATEC";
+            this.dATECDataGridViewTextBoxColumn.HeaderText = "DATEC";
+            this.dATECDataGridViewTextBoxColumn.Name = "dATECDataGridViewTextBoxColumn";
+            // 
+            // dIAGNOSTICDataGridViewTextBoxColumn
+            // 
+            this.dIAGNOSTICDataGridViewTextBoxColumn.DataPropertyName = "DIAGNOSTIC";
+            this.dIAGNOSTICDataGridViewTextBoxColumn.HeaderText = "DIAGNOSTIC";
+            this.dIAGNOSTICDataGridViewTextBoxColumn.Name = "dIAGNOSTICDataGridViewTextBoxColumn";
+            // 
+            // mEDICATIONDataGridViewTextBoxColumn
+            // 
+            this.mEDICATIONDataGridViewTextBoxColumn.DataPropertyName = "MEDICATION";
+            this.mEDICATIONDataGridViewTextBoxColumn.HeaderText = "MEDICATION";
+            this.mEDICATIONDataGridViewTextBoxColumn.Name = "mEDICATIONDataGridViewTextBoxColumn";
+            // 
+            // cONSULTATIONBindingSource
+            // 
+            this.cONSULTATIONBindingSource.DataMember = "CONSULTATION";
+            this.cONSULTATIONBindingSource.DataSource = this.dataSetConsultation;
+            // 
+            // dataSetConsultation
+            // 
+            this.dataSetConsultation.DataSetName = "DataSetConsultation";
+            this.dataSetConsultation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabReports
             // 
@@ -567,6 +1117,68 @@
             // pERSONTableAdapter
             // 
             this.pERSONTableAdapter.ClearBeforeFill = true;
+            // 
+            // cONSULTATIONTableAdapter
+            // 
+            this.cONSULTATIONTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelShowCidForDelete
+            // 
+            this.labelShowCidForDelete.AutoSize = true;
+            this.labelShowCidForDelete.Location = new System.Drawing.Point(6, 17);
+            this.labelShowCidForDelete.Name = "labelShowCidForDelete";
+            this.labelShowCidForDelete.Size = new System.Drawing.Size(58, 17);
+            this.labelShowCidForDelete.TabIndex = 14;
+            this.labelShowCidForDelete.Text = "labelCid";
+            // 
+            // labelShowCnpForDelete
+            // 
+            this.labelShowCnpForDelete.AutoSize = true;
+            this.labelShowCnpForDelete.Location = new System.Drawing.Point(6, 47);
+            this.labelShowCnpForDelete.Name = "labelShowCnpForDelete";
+            this.labelShowCnpForDelete.Size = new System.Drawing.Size(63, 17);
+            this.labelShowCnpForDelete.TabIndex = 15;
+            this.labelShowCnpForDelete.Text = "labelCnp";
+            // 
+            // labelShowDatecForDelete
+            // 
+            this.labelShowDatecForDelete.AutoSize = true;
+            this.labelShowDatecForDelete.Location = new System.Drawing.Point(6, 77);
+            this.labelShowDatecForDelete.Name = "labelShowDatecForDelete";
+            this.labelShowDatecForDelete.Size = new System.Drawing.Size(75, 17);
+            this.labelShowDatecForDelete.TabIndex = 16;
+            this.labelShowDatecForDelete.Text = "labelDatec";
+            // 
+            // labelShowMedicationForDelete
+            // 
+            this.labelShowMedicationForDelete.AutoSize = true;
+            this.labelShowMedicationForDelete.Location = new System.Drawing.Point(6, 137);
+            this.labelShowMedicationForDelete.Name = "labelShowMedicationForDelete";
+            this.labelShowMedicationForDelete.Size = new System.Drawing.Size(106, 17);
+            this.labelShowMedicationForDelete.TabIndex = 17;
+            this.labelShowMedicationForDelete.Text = "labelMedication";
+            // 
+            // labelShowDiagnosticForDelete
+            // 
+            this.labelShowDiagnosticForDelete.AutoSize = true;
+            this.labelShowDiagnosticForDelete.Location = new System.Drawing.Point(6, 107);
+            this.labelShowDiagnosticForDelete.Name = "labelShowDiagnosticForDelete";
+            this.labelShowDiagnosticForDelete.Size = new System.Drawing.Size(104, 17);
+            this.labelShowDiagnosticForDelete.TabIndex = 18;
+            this.labelShowDiagnosticForDelete.Text = "labelDiagnostic";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.labelShowDiagnosticForDelete);
+            this.groupBox4.Controls.Add(this.labelShowCidForDelete);
+            this.groupBox4.Controls.Add(this.labelShowMedicationForDelete);
+            this.groupBox4.Controls.Add(this.labelShowCnpForDelete);
+            this.groupBox4.Controls.Add(this.labelShowDatecForDelete);
+            this.groupBox4.Location = new System.Drawing.Point(66, 106);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(364, 166);
+            this.groupBox4.TabIndex = 19;
+            this.groupBox4.TabStop = false;
             // 
             // Form1
             // 
@@ -589,6 +1201,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPerson)).EndInit();
+            this.tabConsultations.ResumeLayout(false);
+            this.tabConsultations.PerformLayout();
+            this.tabControlConsultation.ResumeLayout(false);
+            this.tpCoView.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tpCoAdd.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.tpCoModify.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.tpCoDelete.ResumeLayout(false);
+            this.tpCoDelete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cONSULTATIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetConsultation)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -647,6 +1278,65 @@
         private System.Windows.Forms.TextBox tbFind3;
         private System.Windows.Forms.TextBox tbFind2;
         private System.Windows.Forms.TextBox tbFind1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private DataSetConsultation dataSetConsultation;
+        private System.Windows.Forms.BindingSource cONSULTATIONBindingSource;
+        private DataSetConsultationTableAdapters.CONSULTATIONTableAdapter cONSULTATIONTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNPDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATECDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dIAGNOSTICDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mEDICATIONDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label labelMedication;
+        private System.Windows.Forms.Label labelDiagnostic;
+        private System.Windows.Forms.Label labelDateConsultation;
+        private System.Windows.Forms.Label labelConsultationCNP;
+        private System.Windows.Forms.Label labelCID;
+        private System.Windows.Forms.TextBox tbMedication;
+        private System.Windows.Forms.TextBox tbDiagnostic;
+        private System.Windows.Forms.TextBox tbConsultationCNP;
+        private System.Windows.Forms.TextBox tbCID;
+        private System.Windows.Forms.Button btnModifyConsultation;
+        private System.Windows.Forms.Button btnAddConsultation;
+        private System.Windows.Forms.Button btnDeleteConsultation;
+        private System.Windows.Forms.DateTimePicker dateTimePickerConsultation;
+        private System.Windows.Forms.Label labelConsultationErrorPrevent;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabControl tabControlConsultation;
+        private System.Windows.Forms.TabPage tpCoView;
+        private System.Windows.Forms.TabPage tpCoAdd;
+        private System.Windows.Forms.TabPage tpCoModify;
+        private System.Windows.Forms.TabPage tpCoDelete;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDatecAdd;
+        private System.Windows.Forms.Label labelConsMedicationAdd;
+        private System.Windows.Forms.Label labelConsDiagnosticAdd;
+        private System.Windows.Forms.Label labelConsDatecAdd;
+        private System.Windows.Forms.Label labelConsCnpAdd;
+        private System.Windows.Forms.Label labelConsCidAdd;
+        private System.Windows.Forms.TextBox tbMedicationAdd;
+        private System.Windows.Forms.TextBox tbDiagnosticAdd;
+        private System.Windows.Forms.TextBox tbConsCnpAdd;
+        private System.Windows.Forms.TextBox tbConsCidAdd;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDatecModify;
+        private System.Windows.Forms.Label labelConsMedicationModify;
+        private System.Windows.Forms.Label labelConsDiagnosticModify;
+        private System.Windows.Forms.Label labelConsDatecModify;
+        private System.Windows.Forms.Label labelConsCnpModify;
+        private System.Windows.Forms.Label labelConsCidModify;
+        private System.Windows.Forms.TextBox tbMedicationModify;
+        private System.Windows.Forms.TextBox tbDiagnosticModify;
+        private System.Windows.Forms.TextBox tbConsCnpModify;
+        private System.Windows.Forms.TextBox tbConsCidModify;
+        private System.Windows.Forms.Label labelConsSearchDelete;
+        private System.Windows.Forms.TextBox tbSearchDiagnosticDelete;
+        private System.Windows.Forms.Label labelShowDiagnosticForDelete;
+        private System.Windows.Forms.Label labelShowMedicationForDelete;
+        private System.Windows.Forms.Label labelShowDatecForDelete;
+        private System.Windows.Forms.Label labelShowCnpForDelete;
+        private System.Windows.Forms.Label labelShowCidForDelete;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 

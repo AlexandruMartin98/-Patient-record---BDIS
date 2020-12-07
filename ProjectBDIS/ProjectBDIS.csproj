@@ -54,6 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetConsultation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetConsultation.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetPerson.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +84,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSetConsultation.xsc">
+      <DependentUpon>DataSetConsultation.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetConsultation.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetConsultation.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetConsultation.xss">
+      <DependentUpon>DataSetConsultation.xsd</DependentUpon>
+    </None>
     <None Include="DataSetPerson.xsc">
       <DependentUpon>DataSetPerson.xsd</DependentUpon>
     </None>
