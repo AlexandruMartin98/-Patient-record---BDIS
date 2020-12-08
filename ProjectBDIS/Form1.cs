@@ -568,7 +568,6 @@ namespace ProjectBDIS
 
         private void BindTextFieldsConsultation(int rowIndex)
         {
-
             //bind both tab cid
             tbCID.DataBindings.Clear();
             tbCID.DataBindings.Add(new Binding("text", bsConsultation, "cid", true));

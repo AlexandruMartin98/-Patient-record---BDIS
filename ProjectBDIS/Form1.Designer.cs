@@ -33,7 +33,6 @@
             this.tabPatient = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabAddDelete = new System.Windows.Forms.TabPage();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dateTimePickerAdd = new System.Windows.Forms.DateTimePicker();
             this.tbAge = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.labelCNP = new System.Windows.Forms.Label();
             this.tabModify = new System.Windows.Forms.TabPage();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.dateTimePickerModify = new System.Windows.Forms.DateTimePicker();
             this.tbAgeModify = new System.Windows.Forms.TextBox();
@@ -137,6 +137,7 @@
             this.cONSULTATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetConsultation = new ProjectBDIS.DataSetConsultation();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.pERSONTableAdapter = new ProjectBDIS.DataSetPersonTableAdapters.PERSONTableAdapter();
             this.cONSULTATIONTableAdapter = new ProjectBDIS.DataSetConsultationTableAdapters.CONSULTATIONTableAdapter();
             this.tabControl1.SuspendLayout();
@@ -161,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cONSULTATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConsultation)).BeginInit();
+            this.tabReports.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -220,16 +222,6 @@
             this.tabAddDelete.TabIndex = 0;
             this.tabAddDelete.Text = "Adaugare";
             this.tabAddDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(190, 352);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(129, 35);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Sterge";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -364,6 +356,16 @@
             this.tabModify.TabIndex = 1;
             this.tabModify.Text = "Modificare/Stergere";
             this.tabModify.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(190, 352);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(129, 35);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Sterge";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnModify
             // 
@@ -1153,6 +1155,7 @@
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.crystalReportViewer1);
             this.tabReports.Location = new System.Drawing.Point(4, 25);
             this.tabReports.Name = "tabReports";
             this.tabReports.Padding = new System.Windows.Forms.Padding(3);
@@ -1160,6 +1163,18 @@
             this.tabReports.TabIndex = 2;
             this.tabReports.Text = "Rapoarte";
             this.tabReports.UseVisualStyleBackColor = true;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.DisplayToolbar = false;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(983, 463);
+            this.crystalReportViewer1.TabIndex = 0;
             // 
             // pERSONTableAdapter
             // 
@@ -1209,6 +1224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cONSULTATIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConsultation)).EndInit();
+            this.tabReports.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1325,6 +1341,7 @@
         private System.Windows.Forms.Label labelShowCnpForDelete;
         private System.Windows.Forms.Label labelShowCidForDelete;
         private System.Windows.Forms.GroupBox groupBox4;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
 
