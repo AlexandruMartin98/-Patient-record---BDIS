@@ -38,6 +38,9 @@ namespace ProjectBDIS
         int tabConsultationPressed = 0;
 
 
+        OracleDataAdapter dataAdapterReports;
+        BindingSource bsReports;
+        DataSet dataSetReport;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -46,7 +49,7 @@ namespace ProjectBDIS
             // TODO: This line of code loads data into the 'dataSetPerson.PERSON' table. You can move, or remove it, as needed.
             this.pERSONTableAdapter.Fill(this.dataSetPerson.PERSON);
 
-    
+
             //DATA SOURCE = DESKTOP - 2OMMMBI: 1521 / XE; PASSWORD = studentmartin; USER ID = STUDENTMARTIN
             oracleConnection = new OracleConnection("DATA SOURCE= DESKTOP-2OMMMBI:1521/XE;PASSWORD=studentmartin;PERSIST SECURITY INFO=True;USER ID=STUDENTMARTIN");
 
@@ -242,7 +245,7 @@ namespace ProjectBDIS
                 dataGridView2.DataSource = bsConsultation;
             }
 
-       }
+        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -387,9 +390,9 @@ namespace ProjectBDIS
             int rownum = (dataGridView1.CurrentCell.RowIndex);
             var cnp = dataGridView1.Rows[rownum].Cells[0].Value;
 
-                                                                                                                                    //EndDate = CAST('2009-05-25' AS DATETIME)
-                                                                                                                                    //Select TO_DATE('02/26/2010', 'DD/MM/YYYY') from dual;
-            var sql = "UPDATE Person SET LASTNAME = '" + @lastName + "', FIRSTNAME = '" + @firstName + "', ADDRESS = '"+ @address + "', BIRTHDATE = TO_DATE('" + @dateString + "', 'MM/dd/yyyy'), AGE = '" + @age + "'" + "WHERE CNP = '" + @cnp + "'";
+            //EndDate = CAST('2009-05-25' AS DATETIME)
+            //Select TO_DATE('02/26/2010', 'DD/MM/YYYY') from dual;
+            var sql = "UPDATE Person SET LASTNAME = '" + @lastName + "', FIRSTNAME = '" + @firstName + "', ADDRESS = '" + @address + "', BIRTHDATE = TO_DATE('" + @dateString + "', 'MM/dd/yyyy'), AGE = '" + @age + "'" + "WHERE CNP = '" + @cnp + "'";
             using (OracleConnection conn = new OracleConnection("DATA SOURCE= DESKTOP-2OMMMBI:1521/XE;PASSWORD=studentmartin;PERSIST SECURITY INFO=True;USER ID=STUDENTMARTIN"))
             {
                 using (OracleCommand comm = new OracleCommand())
@@ -530,6 +533,58 @@ namespace ProjectBDIS
                         MessageBox.Show("Conexiunea nu se poate realiza." + ex.Data);
                         oracleConnection.Close();
                     }
+                }
+            }
+
+            if (tabControl1.SelectedTab == tabControl1.TabPages["tabReports"])
+            {
+
+                // select PERSON.CNP, PERSON.LASTNAME, PERSON.FIRSTNAME, PERSON.ADDRESS, PERSON.BIRTHDATE, PERSON.AGE, CONSULTATION.CID, CONSULTATION.DATEC, CONSULTATION.DIAGNOSTIC, CONSULTATION.MEDICATION from PERSON join CONSULTATION on PERSON.CNP=CONSULTATION.CNP where PERSON.CNP='1970622411567'
+                strSQL = "SELECT PERSON.CNP, PERSON.LASTNAME, PERSON.FIRSTNAME, PERSON.ADDRESS, PERSON.BIRTHDATE, PERSON.AGE, CONSULTATION.CID, CONSULTATION.DATEC, CONSULTATION.DIAGNOSTIC, CONSULTATION.MEDICATION from PERSON join CONSULTATION on PERSON.CNP=CONSULTATION.CNP WHERE PERSON.CNP = " + cnpConsultations;
+                dataAdapterReports = new OracleDataAdapter(strSQL, oracleConnection);
+                OracleCommandBuilder commandReport = new OracleCommandBuilder(dataAdapterReports);
+
+                dataSetReport = new DataSet();
+                //dataSet.Tables.Add("testConsultation");
+                try
+                {
+                    oracleConnection.Open();
+                    cmd = new OracleCommand(strSQL, oracleConnection);
+                    OracleDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+
+                    if (dr.Read())
+                    {
+                        //bind data in gridview
+                        MessageBox.Show("Pacientul are consultatii");
+                        bsReports = new BindingSource();
+                        dataAdapterReports.Fill(dataSetReport, "testCrystalReport");
+                        bsReports.DataSource = dataSetReport.Tables["testCrystalReport"];
+                        dataGridView3.DataSource = bsReports;
+
+                        //call cell click to handle binding textbox
+                        //dgv2Level_CellClick(this.dataGridView2, new DataGridViewCellEventArgs(this.dataGridView2.CurrentCell.ColumnIndex, this.dataGridView2.CurrentRow.Index));
+
+                        //fill tb with cnp
+                        //tbConsCnpAdd.Text = cnpConsultations;
+                    }
+                    else
+                    {
+                        //set all to clear
+                        //dataGridView2.DataSource = null;
+                        //clearTextBoxConsultation();
+                        MessageBox.Show("Pacientul nu are consultatii, adauga una!");
+                        //and go to add tab
+                        //this.tabControlConsultation.SelectedTab = this.tpCoAdd;
+                        //clearTbCaseNoPacient();
+                    }
+
+                    oracleConnection.Close();
+                }
+                catch (OracleException ex)
+                {
+                    MessageBox.Show("Conexiunea nu se poate realiza." + ex.Data);
+                    oracleConnection.Close();
                 }
             }
         }
@@ -823,6 +878,11 @@ namespace ProjectBDIS
                 }
 
             }
+        }
+
+        private void btnJoinTables_Click(object sender, EventArgs e)
+        {
+            String cnp = tbCnpJoinTables.Text;
         }
     }
 

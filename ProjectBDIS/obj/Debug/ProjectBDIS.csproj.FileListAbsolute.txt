@@ -27,3 +27,15 @@ C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bi
 C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\stdole.dll
 C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Martin\Documents\Visual Studio 2015\Projects\ProjectBDIS\ProjectBDIS\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll

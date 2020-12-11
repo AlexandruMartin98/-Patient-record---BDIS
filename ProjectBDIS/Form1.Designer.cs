@@ -138,6 +138,11 @@
             this.dataSetConsultation = new ProjectBDIS.DataSetConsultation();
             this.tabReports = new System.Windows.Forms.TabPage();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.gbSearchPacientPaper = new System.Windows.Forms.GroupBox();
+            this.btnJoinTables = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tbCnpJoinTables = new System.Windows.Forms.TextBox();
+            this.labelCnpSearchPacientPaper = new System.Windows.Forms.Label();
             this.pERSONTableAdapter = new ProjectBDIS.DataSetPersonTableAdapters.PERSONTableAdapter();
             this.cONSULTATIONTableAdapter = new ProjectBDIS.DataSetConsultationTableAdapters.CONSULTATIONTableAdapter();
             this.tabControl1.SuspendLayout();
@@ -163,6 +168,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cONSULTATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConsultation)).BeginInit();
             this.tabReports.SuspendLayout();
+            this.gbSearchPacientPaper.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1156,6 +1163,7 @@
             // tabReports
             // 
             this.tabReports.Controls.Add(this.crystalReportViewer1);
+            this.tabReports.Controls.Add(this.gbSearchPacientPaper);
             this.tabReports.Location = new System.Drawing.Point(4, 25);
             this.tabReports.Name = "tabReports";
             this.tabReports.Padding = new System.Windows.Forms.Padding(3);
@@ -1169,12 +1177,61 @@
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.DisplayToolbar = false;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(6, 145);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(983, 463);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(971, 318);
+            this.crystalReportViewer1.TabIndex = 1;
+            // 
+            // gbSearchPacientPaper
+            // 
+            this.gbSearchPacientPaper.Controls.Add(this.btnJoinTables);
+            this.gbSearchPacientPaper.Controls.Add(this.dataGridView3);
+            this.gbSearchPacientPaper.Controls.Add(this.tbCnpJoinTables);
+            this.gbSearchPacientPaper.Controls.Add(this.labelCnpSearchPacientPaper);
+            this.gbSearchPacientPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSearchPacientPaper.Location = new System.Drawing.Point(6, 6);
+            this.gbSearchPacientPaper.Name = "gbSearchPacientPaper";
+            this.gbSearchPacientPaper.Size = new System.Drawing.Size(977, 133);
+            this.gbSearchPacientPaper.TabIndex = 0;
+            this.gbSearchPacientPaper.TabStop = false;
+            this.gbSearchPacientPaper.Text = "Cauta fisa pacientului";
+            // 
+            // btnJoinTables
+            // 
+            this.btnJoinTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJoinTables.Location = new System.Drawing.Point(203, 51);
+            this.btnJoinTables.Name = "btnJoinTables";
+            this.btnJoinTables.Size = new System.Drawing.Size(36, 24);
+            this.btnJoinTables.TabIndex = 3;
+            this.btnJoinTables.Text = "Go";
+            this.btnJoinTables.UseVisualStyleBackColor = true;
+            this.btnJoinTables.Click += new System.EventHandler(this.btnJoinTables_Click);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(259, 12);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(712, 115);
+            this.dataGridView3.TabIndex = 2;
+            // 
+            // tbCnpJoinTables
+            // 
+            this.tbCnpJoinTables.Location = new System.Drawing.Point(48, 51);
+            this.tbCnpJoinTables.Name = "tbCnpJoinTables";
+            this.tbCnpJoinTables.Size = new System.Drawing.Size(149, 22);
+            this.tbCnpJoinTables.TabIndex = 1;
+            // 
+            // labelCnpSearchPacientPaper
+            // 
+            this.labelCnpSearchPacientPaper.AutoSize = true;
+            this.labelCnpSearchPacientPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCnpSearchPacientPaper.Location = new System.Drawing.Point(6, 54);
+            this.labelCnpSearchPacientPaper.Name = "labelCnpSearchPacientPaper";
+            this.labelCnpSearchPacientPaper.Size = new System.Drawing.Size(36, 17);
+            this.labelCnpSearchPacientPaper.TabIndex = 0;
+            this.labelCnpSearchPacientPaper.Text = "CNP";
             // 
             // pERSONTableAdapter
             // 
@@ -1225,6 +1282,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cONSULTATIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConsultation)).EndInit();
             this.tabReports.ResumeLayout(false);
+            this.gbSearchPacientPaper.ResumeLayout(false);
+            this.gbSearchPacientPaper.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1342,6 +1402,11 @@
         private System.Windows.Forms.Label labelShowCidForDelete;
         private System.Windows.Forms.GroupBox groupBox4;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.GroupBox gbSearchPacientPaper;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.TextBox tbCnpJoinTables;
+        private System.Windows.Forms.Label labelCnpSearchPacientPaper;
+        private System.Windows.Forms.Button btnJoinTables;
     }
 }
 
